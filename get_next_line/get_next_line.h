@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/14 17:01:00 by akarafi          ###   ########.fr       */
+/*   Created: 2021/11/12 18:59:54 by akarafi           #+#    #+#             */
+/*   Updated: 2021/12/14 15:15:43 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include <stdio.h>
-# include <unistd.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdbool.h>
-# define FAILED 0
-# define SUCCESS 1
+# include <unistd.h>
+# define BUFFER_SIZE 1024
 
-// output:
-void	print_error(char *s);
-
-// parsing:
-void	check_map(char *file_name);
-bool	map_is_valid(char *file_name);
+char	*get_next_line(int fd);
+char	*add_buffer_to_full(char *buffer, char *full);
+int		ft_strlen(char *s);
+void	ft_strcat(char *dst, char *src);
+char	*ft_strdup( char *s1);
+char	*trim(char *full);
+char	*get_line(char *full);
+int		line_in_full(char *full);
+char	*line_or_null(char *full);
+char	*main_func(int fd);
 
 #endif

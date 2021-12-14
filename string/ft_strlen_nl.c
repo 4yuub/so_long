@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_strlen_nl.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/14 17:01:00 by akarafi          ###   ########.fr       */
+/*   Created: 2021/12/14 15:25:55 by akarafi           #+#    #+#             */
+/*   Updated: 2021/12/14 15:26:13 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdbool.h>
-# define FAILED 0
-# define SUCCESS 1
+int	ft_strlen_nl(char *s)
+{
+	int	i;
 
-// output:
-void	print_error(char *s);
-
-// parsing:
-void	check_map(char *file_name);
-bool	map_is_valid(char *file_name);
-
-#endif
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i] && s[i] != '\n')
+		i++;
+	return (i);
+}
