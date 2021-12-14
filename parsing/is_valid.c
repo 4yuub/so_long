@@ -18,17 +18,13 @@ static bool	check_lenght(char *file_name)
 {
 	int		fd;
 	char	*s;
-	int		len;
 	int		tmp_len;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-	{
-		perror("Error\nCan't open this file\n");
-		exit(1);
-	}
+		cant_opend();
 	s = get_next_line(fd);
-	len = ft_strlen_nl(s);
+	t_data.len = ft_strlen_nl(s);
 	free(s);
 	while (true)
 	{
@@ -37,7 +33,7 @@ static bool	check_lenght(char *file_name)
 			break ;
 		tmp_len = ft_strlen_nl(s);
 		free(s);
-		if (len != tmp_len)
+		if (t_data.len != tmp_len)
 			return (close(fd), false);
 	}
 	return (close(fd), true);
@@ -79,10 +75,7 @@ static bool	check_existance(char *file_name)
 	exits = 0;
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-	{
-		perror("Error\nCan't open this file\n");
-		exit(1);
-	}
+		cant_opend();
 	while (true)
 	{
 		s = get_next_line(fd);
@@ -91,6 +84,7 @@ static bool	check_existance(char *file_name)
 		count_and_check(s, &collectables, &players, &exits);
 		free(s);
 	}
+	close(fd);
 	return (players == 1 && exits >= 1 && collectables >= 1);
 }
 
@@ -101,8 +95,8 @@ bool	map_is_valid(char *file_name)
 	bool	closed_map;
 	bool	building_blocks_existance;
 
-	// closed_map = check_closed(file_name);
 	lines_lenght = check_lenght(file_name);
+	closed_map = check_closed(file_name);
 	building_blocks_existance = check_existance(file_name);
-	return (lines_lenght && building_blocks_existance);// && closed_map);
+	return (lines_lenght && building_blocks_existance && closed_map);
 }

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:59 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/14 22:37:16 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/15 00:11:44 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ void	check_map(char *file_name)
 	check_file_name(file_name);
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
-	{
-		perror("Error\nCan't open this file!\n");
-		exit(1);
-	}
+		cant_opend();
 	if (!map_is_valid(file_name))
 	{
 		print_error("Error\nInvalid Map!\n");
