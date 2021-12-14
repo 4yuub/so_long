@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:59 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/14 17:05:46 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/14 22:37:16 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_map(char *file_name)
 	}
 	if (!map_is_valid(file_name))
 	{
-		print_error("Error\nThis is not a valid Map!\n");
+		print_error("Error\nInvalid Map!\n");
 		exit(1);
 	}
 	printf("valid!");
