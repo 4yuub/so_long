@@ -6,14 +6,14 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 23:28:23 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 02:36:18 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/15 03:18:31 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../get_next_line/get_next_line.h"
 #include "../so_long.h"
 
-static void	check_first_and_last(char *s)
+static void	check_first_and_last(char *s, bool boolean)
 {
 	while (*s && *s != '\n')
 	{
@@ -23,6 +23,11 @@ static void	check_first_and_last(char *s)
 			exit(0);
 		}
 		s++;
+	}
+	if (boolean && *s == '\n')
+	{
+		print_error("Error\nInvalid Map!\n");
+		exit(0);
 	}
 }
 
@@ -47,14 +52,14 @@ bool	check_closed(char *file_name)
 	s = get_next_line(fd);
 	if (!s)
 		return (close(fd), false);
-	check_first_and_last(s);
+	check_first_and_last(s, false);
 	while (true)
 	{
 		previous = s;
 		s = get_next_line(fd);
 		if (!s)
 		{
-			check_first_and_last(previous);
+			check_first_and_last(previous, true);
 			free(previous);
 			break ;
 		}
