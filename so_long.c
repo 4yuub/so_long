@@ -25,7 +25,6 @@ int	main(int ac, char **av)
 	check_map(av[1]);
 	head = parse_map(av[1]);
 	convert_list_to_map(av[1], &head);
-	printf("after:\n");
 	for (int i = 0; i < t_data.hight; i++)
 		printf("%s\n", t_data.map[i]);
 }

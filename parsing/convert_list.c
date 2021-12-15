@@ -22,7 +22,6 @@ void	convert_list_to_map(char *file_name, t_node **head)
 	i = 0;
 	while (tmp)
 	{
-		printf("%s\n", tmp->line);
 		t_data.map[i] = tmp->line;
 		tmp = tmp->next;
 		i++;
