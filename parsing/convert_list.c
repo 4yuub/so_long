@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   convert_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:58:35 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 14:35:22 by akarafi          ###   ########.fr       */
+/*   Created: 2021/12/15 12:17:31 by akarafi           #+#    #+#             */
+/*   Updated: 2021/12/15 14:33:43 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int	main(int ac, char **av)
+void	convert_list_to_map(char *file_name, t_node **head)
 {
-	int		fd;
-	t_node	*head;
+	t_node	*tmp;
+	int		i;
 
-	if (ac != 2)
+	t_data.map = malloc(t_data.hight * sizeof(char *));
+	tmp = *head;
+	i = 0;
+	while (tmp)
 	{
-		print_error("Error\nInvalide Args\n");
-		return (0);
+		printf("%s\n", tmp->line);
+		t_data.map[i] = tmp->line;
+		tmp = tmp->next;
+		i++;
 	}
-	check_map(av[1]);
-	head = parse_map(av[1]);
-	convert_list_to_map(av[1], &head);
-	printf("after:\n");
-	for (int i = 0; i < t_data.hight; i++)
-		printf("%s\n", t_data.map[i]);
+	while (head && *head)
+		pop(head);
 }
