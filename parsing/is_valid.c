@@ -25,6 +25,8 @@ static bool	check_lenght(char *file_name)
 		cant_opend();
 	s = get_next_line(fd);
 	t_data.len = ft_strlen_nl(s);
+	if (!s)
+		return (close(fd), false);
 	free(s);
 	while (true)
 	{
@@ -76,7 +78,7 @@ static bool	check_existance(char *file_name)
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		cant_opend();
-	while (true)
+	while (true && t_data.len > 0)
 	{
 		s = get_next_line(fd);
 		if (!s)

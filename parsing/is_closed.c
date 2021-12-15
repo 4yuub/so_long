@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 23:28:23 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 00:17:05 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/15 02:36:18 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ bool	check_closed(char *file_name)
 	if (fd < 0)
 		cant_opend();
 	s = get_next_line(fd);
+	if (!s)
+		return (close(fd), false);
 	check_first_and_last(s);
 	while (true)
 	{
