@@ -87,6 +87,7 @@ static bool	check_existance(char *file_name)
 		free(s);
 	}
 	close(fd);
+	t_data.collectables = collectables;
 	return (players == 1 && exits >= 1 && collectables >= 1);
 }
 

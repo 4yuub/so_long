@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 12:37:00 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/16 15:18:23 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,20 @@
 # define FAILED 0
 # define SUCCESS 1
 
+typedef struct s_position
+{
+	int	x;
+	int	y;
+}		t_position;
+
 struct s_data
 {
-	int		len;
-	int		hight;
-	char	**map;
+	int			len;
+	int			hight;
+	char		**map;
+	int			collectables;
+	int			number_of_moves;
+	t_position	player;
 }		t_data;
 
 // output:
@@ -47,5 +56,8 @@ void	convert_list_to_map(char *file_name, t_node **head);
 void	pop(t_node **head);
 t_node	*get_new(char *content);
 void	push(t_node **list, t_node *node);
+
+// game play:
+void	find_player(void);
 
 #endif
