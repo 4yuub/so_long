@@ -6,14 +6,14 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 23:28:23 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 03:18:31 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/16 21:35:26 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../get_next_line/get_next_line.h"
 #include "../so_long.h"
 
-static void	check_first_and_last(char *s, bool boolean)
+static void	check_first_and_last(char *s, bool last)
 {
 	while (*s && *s != '\n')
 	{
@@ -24,7 +24,7 @@ static void	check_first_and_last(char *s, bool boolean)
 		}
 		s++;
 	}
-	if (boolean && *s == '\n')
+	if (last && *s == '\n')
 	{
 		print_error("Error\nInvalid Map!\n");
 		exit(0);
