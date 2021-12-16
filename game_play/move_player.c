@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:30:37 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/16 17:42:46 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/16 19:12:49 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static bool	check_postion(t_position p)
 
 void	move(t_position	position)
 {
-	bool	win;
-
 	if (!check_postion(position))
 		return ;
 	t_data.number_of_moves++;
