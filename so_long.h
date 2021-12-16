@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/16 15:18:23 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/16 16:37:04 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	push(t_node **list, t_node *node);
 
 // game play:
 void	find_player(void);
+void	move(t_position	position);
 
 #endif
