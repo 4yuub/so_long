@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 21:58:09 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 23:22:31 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ struct s_data
 	t_img		*collectable;
 	t_img		*house;
 	t_img		*stone;
+	t_img		*bat;
+	t_img		*bat2;
 	t_img		*background;
 	char		*buff;
 }		t_data;

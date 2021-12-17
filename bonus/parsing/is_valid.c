@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 06:39:14 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 06:39:16 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 23:28:02 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	count_and_check(char *s, int	*c, int	*p, int *e)
 			(*p)++;
 		else if (s[i] == 'C')
 			(*c)++;
-		else if (s[i] != '1' && s[i] != '0')
+		else if (s[i] != '1' && s[i] != '0' && s[i] != 'X')
 		{
 			free(s);
 			print_error("Error\nInvalid Map!\n");

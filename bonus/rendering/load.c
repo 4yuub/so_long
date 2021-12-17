@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 23:48:07 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 06:39:36 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 23:23:06 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ void	load_imgs(void)
 	t_data.collectable = load_img("./imgs/collec.xpm");
 	t_data.house = load_img("./imgs/house.xpm");
 	t_data.stone = load_img("./imgs/stone.xpm");
+	t_data.bat = load_img("./imgs/bat.xpm");
+	t_data.bat2 = load_img("./imgs/bat2.xpm");
 	t_data.background = load_img("./imgs/background.xpm");
 }

@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:40:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 22:18:25 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 23:34:24 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ void	put_img_of(int x, int y)
 		put_img(t_data.stone, x, y);
 	else if (c == 'C')
 		put_img(t_data.collectable, x, y);
+	else if (c == 'X')
+	{
+		if (rand() % 3 == 0 || rand() % 3 == 1)
+			put_img(t_data.bat, x, y);
+		else
+			put_img(t_data.bat2, x, y);
+	}
 }
 
 int	move_player(int key, void *x)
