@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:40:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 05:35:56 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 05:52:54 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,20 @@ int	move_player(int key, void *x)
 	return (0);
 }
 
+int	_exit(int key, int n)
+{
+	(void) key;
+	exit(n);
+	return (0);
+}
+
 void	render(void)
 {
 	int	x;
 	int	y;
 
-	y = -1;
-	t_data.mlx = mlx_init();
+	y = -1;	
 	load_imgs();
-	t_data.window = mlx_new_window(t_data.mlx, \
-		t_data.len * 30, t_data.hight * 30, "So_long");
 	while (++y < t_data.hight)
 	{
 		x = -1;
@@ -71,5 +75,6 @@ void	render(void)
 		}	
 	}
 	mlx_hook(t_data.window, 2, 0L, move_player, NULL);
+	mlx_hook(t_data.window, 17, 1L, _exit, 0);
 	mlx_loop(t_data.mlx);
 }

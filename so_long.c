@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:58:35 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 01:10:41 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 05:49:58 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int	main(int ac, char **av)
 	head = parse_map(av[1]);
 	convert_list_to_map(&head);
 	find_player();
+	t_data.mlx = mlx_init();
+	t_data.window = mlx_new_window(t_data.mlx, \
+		t_data.len * 30, t_data.hight * 30, "So_long");
 	render();
 }
