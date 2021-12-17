@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:40:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 06:38:51 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 19:22:33 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	render(void)
 			put_img_of(x, y);
 		}	
 	}
-	mlx_hook(t_data.window, 2, 0L, move_player, NULL);
+	mlx_hook(t_data.window, 2, 1L, move_player, NULL);
 	mlx_hook(t_data.window, 17, 1L, distroy, 0);
 	mlx_loop(t_data.mlx);
 }
