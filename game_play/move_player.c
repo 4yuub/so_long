@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:30:37 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 06:38:06 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 20:37:34 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ static bool	check_postion(t_position p)
 
 	if (p.x > t_data.len - 1 || p.y > t_data.hight - 1)
 		return (false);
+	if (p.x < 0 || p.y < 0)
+		return (false);
 	c = t_data.map[p.y][p.x];
 	if (c == '1')
-		return (false);
+		return (true);
 	if (c == 'E' && t_data.collectables != 0)
 		return (false);
 	if (c == 'C')
