@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:49 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 02:05:15 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 06:37:12 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,6 @@ void	move_right(void);
 // rendring:
 void	render(void);
 void	load_imgs(void);
+int		distroy(int n);
+
 #endif

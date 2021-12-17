@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   distroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 14:58:22 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 06:41:39 by akarafi          ###   ########.fr       */
+/*   Created: 2021/12/17 06:36:23 by akarafi           #+#    #+#             */
+/*   Updated: 2021/12/17 06:37:37 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp( char *s1, char *s2, int n)
-{
-	int	i;
+#include "../so_long.h"
 
-	i = -1;
-	while (++i < n && (s1[i] || s2[i]))
-		if (s1[i] != s2[i])
-			return (0);
-	return (1);
+void	__distroy(void)
+{
+	mlx_destroy_window(t_data.mlx, t_data.window);
+	exit(0);
+}
+
+int	distroy(int n)
+{
+	__distroy();
+	return (n);
 }

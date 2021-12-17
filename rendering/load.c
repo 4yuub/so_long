@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 23:48:07 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 01:06:33 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 06:39:36 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_img	*load_img(char *filepath)
 	img = (t_img *)malloc(sizeof(t_img));
 	if (!img)
 	{
-		perror("allocation failed\n");//free
+		perror("allocation failed\n");
 		exit(1);
 	}
 	img->data = mlx_xpm_file_to_image(t_data.mlx, filepath, \

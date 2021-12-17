@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:30:37 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/16 19:12:49 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 06:38:06 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	move(t_position	position)
 	t_data.map[t_data.player.y][t_data.player.x] = '0';
 	if (t_data.map[position.y][position.x] == 'E')
 	{
-		printf("win\n");// win and free;
+		printf("You win\n");
 		exit(0);
 	}
 	t_data.map[position.y][position.x] = 'P';
