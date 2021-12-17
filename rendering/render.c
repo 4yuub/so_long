@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 00:40:19 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/17 02:10:17 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 05:35:56 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,24 @@ void	put_img_of(int x, int y)
 		put_img(t_data.collectable, x, y);
 }
 
+int	move_player(int key, void *x)
+{
+	(void) x;
+	mlx_clear_window(t_data.mlx, t_data.window);
+	if (key == 53)
+		exit(0);
+	if (key == 13)
+		move_up();
+	else if (key == 0)
+		move_left();
+	else if (key == 2)
+		move_right();
+	else if (key == 1)
+		move_down();
+	render();
+	return (0);
+}
+
 void	render(void)
 {
 	int	x;
@@ -52,5 +70,6 @@ void	render(void)
 			put_img_of(x, y);
 		}	
 	}
+	mlx_hook(t_data.window, 2, 0L, move_player, NULL);
 	mlx_loop(t_data.mlx);
 }
