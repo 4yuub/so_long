@@ -93,7 +93,6 @@ static bool	check_existance(char *file_name)
 
 bool	map_is_valid(char *file_name)
 {
-	char	*s;
 	bool	lines_lenght;
 	bool	closed_map;
 	bool	building_blocks_existance;

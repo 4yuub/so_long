@@ -6,7 +6,7 @@
 /*   By: akarafi <akarafi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:57:59 by akarafi           #+#    #+#             */
-/*   Updated: 2021/12/15 08:50:14 by akarafi          ###   ########.fr       */
+/*   Updated: 2021/12/17 01:10:32 by akarafi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static void	check_file_name(char *file_name)
 
 void	check_map(char *file_name)
 {
-	int	len;
 	int	fd;
 
 	check_file_name(file_name);
